@@ -4,18 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Football!</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
-
+    <title>Football!</title>
 </head>
+
+</div>
 <body>
+<div class="container">
+ <div class="panel">
+        <div class="player-roster">
+            <div class="player-card">
+            <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="">
+            <h6>Player Name</h6>
+            <h6>Team</h6>
+            <h6>Position</h6>
+            </div>
+    </div>
+  
+</div>
+<div class="row">
+<div class="col-xs-12 col-md-6 selectable-container">
+    <div class="row">
+        <form class ="form-inline search-form" onsubmit="playerService.getPlayersByTeam()">
+        </form>
+    </div>
+</div>
+</div> 
+ <div class="template">
+    <div class="my-team">
+            <div class="player-card">
+                    <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="">
+                    <h6>Player Name</h6>
+                    <h6>Team</h6>
+                    <h6>Position</h6>
+                    </div>
+                </div>
+        </div>
+   </div>
+</div>
+</div>
+ 
 
     
     <p>so far so good</p>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <script src="football/football-service.js"></script>
     <script src="football/football-controller.js"></script>
-    <script src="app.js"></script>
+    <script src="app/init.js"></script>
 </body>
 </html>
