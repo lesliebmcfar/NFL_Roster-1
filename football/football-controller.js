@@ -6,9 +6,9 @@ function FootballController() {
   function getData(playersData) {
     var template = ""
     // for loop iterates over data  
-    for (var i = 0; i < playersData.length; i++)
+    for (var i = 0; i < playersData.length; i++){
       var player = playersData[i]
-    {
+    
       template += `
     <template class = "player-card">
     <div class="w3-card-4 player-card"id="player-card">
@@ -18,8 +18,6 @@ function FootballController() {
             <h6>${player.fullName}</h6>
             <h6>${player.teamName}</h6>
             <h6>${player.position}</h6>
-            {/*   add button to add players to myTeam */}
-
           </div>
         </div>
       </div>`
@@ -27,20 +25,6 @@ function FootballController() {
       document.getElementById("players").innerHTML = template
     }
 
-
-    /* 
-      getMYTeam = function () {
-        var team = myPlayers
-        var myTemplate = ""
-        var playersData = [] //Assume this is a large collection of players.
-    
-        var filteredPlayers = playersData.filter(function (player) { //replace forEach with filter.
-          if (player.team === "SF") { //check to see if they are on the team SF
-            return true; //instead of adding it to an array, just return true.
-          }
-        });
-        console.log(filteredPlayers); //this should be all players that are on SF.
-     */
 
 
     {

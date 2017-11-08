@@ -5,6 +5,7 @@
 functions(actions) only,  */
 
 function PlayerService(callback) {
+    debugger
     //define variables to be accessed by all of service.js
     var playersData = []
     var myTeam = []
@@ -16,9 +17,8 @@ function PlayerService(callback) {
         var localData = localStorage.getItem('playersData');
         if (localData) {
             playersData = JSON.parse(localData);
-           //console.log(playersData)
-
-            //return callback();
+            console.log(playersData)
+            return callback();
             //return will short-circuit the loadPlayersData function
             //this will prevent the code below from ever executing
         }
@@ -62,11 +62,7 @@ function PlayerService(callback) {
             }
         });
     }
+    loadPlayersData(); //call the function above every time we create a new service }
 
-
-
-
-loadPlayersData(); //call the function above every time we create a new service }
-    
 }
 
