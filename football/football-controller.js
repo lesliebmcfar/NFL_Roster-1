@@ -10,10 +10,10 @@ function FootballController() {
     // for loop iterates over data  
     for (var i = 0; i < playersData.length; i++){
       var player = playersData[i]
-    
+  
       template += `
     <template class = "player-card">
-    <div class="w3-card-4 player-card"id="player-card">
+    <div class="w3-card-4 player-card" id="player-card">
      <div class="row">
      
             <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt=""></div> 
@@ -30,20 +30,6 @@ function FootballController() {
     }
 
 
-    /* 
-      getMYTeam = function () {
-        var team = myPlayers
-        var myTemplate = ""
-        var playersData = [] //Assume this is a large collection of players.
-    
-        var filteredPlayers = playersData.filter(function (player) { //replace forEach with filter.
-          if (player.team === "SF") { //check to see if they are on the team SF
-            return true; //instead of adding it to an array, just return true.
-          }
-        });
-        console.log(filteredPlayers); //this should be all players that are on SF.
-     */
-
 
     {
       template += `
@@ -51,7 +37,8 @@ function FootballController() {
   <div class="w3-card-4 player-card"id="player-card"> 
   <div class="player-roster" id="myPlayer">
     <div class="row">
-      <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt=""></div> 
+    
+      <img src="${player.photo}" alt=""></div> 
       <h6>${player.fullname}</h6>
       <h6>${player.pro_team}</h6>
       <h6>${player.position}</h6>

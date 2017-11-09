@@ -5,6 +5,7 @@
 functions(actions) only,  */
 
 function PlayerService(callback) {
+
     //define variables to be accessed by all of service.js
     var playersData = []
     var myTeam = []
@@ -34,44 +35,41 @@ function PlayerService(callback) {
             console.log('Finished Writing Player Data to localStorage')
             callback()
         });
-       //call the function above every time we create a new service
+        //call the function above every time we create a new service
     }
-
-
-
     //all independent functions but need access to playersData
 
 
-    function PlayersService(callback){
-        var playersData = [];
- 
+    /*   function PlayersService(callback){
+          var playersData = [];
+    */
 
-this.getPlayersByTeam = function (teamName) {
-    playersData.filter(function (player) {
-        if (player.pro_team == teamName) {
-            return true;
-        }
-    });
+    this.getPlayersByTeam = function (teamName) {
+        playersData.filter(function (player) {
+            if (player.pro_team == teamName) {
+                return true;
+            }
+        });
+    }
+
+    this.getPlayersByPosition = function (position) {
+        return playersData.filter(function (player) {
+            if (player.position == position) {
+                return true;
+            }
+        });
+    }
+
+    this.getPlayersByName = function (name) {
+        return playersData.filter(function (player) {
+            if (player.name == name) {
+                return true;
+            }
+        });
+
+    }
+    loadPlayersData();
 }
 
-this.getPlayersByPosition = function (position) {
-    return playersData.filter(function (player) {
-        if (player.position == position) {
-            return true;
-        }
-    });
-}
-
-this.getPlayersByName = function (name) {
-    return playersData.filter(function (player) {
-        if (player.name == name) {
-            return true;
-        }
-    });
-   
-}
 
 
-
-    }loadPlayersData();
-}
