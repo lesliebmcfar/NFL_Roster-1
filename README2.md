@@ -117,7 +117,7 @@ function PlayersService(callback){
           console.log('Writing Player Data to localStorage')
           localStorage.setItem('playersData', JSON.stringify(playersData))
           console.log('Finished Writing Player Data to localStorage')
-          callback()
+          callback()4590-i=
         });
     }	
 loadPlayersData(); //call the function above every time we create a new service

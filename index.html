@@ -17,7 +17,7 @@
     <div class="container">
         <div class="panel">
             <div class="player-roster">
-                <div class="player-card">
+                <div class="player-card" id="player-card">
                     <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="">
                     <h6>Player Name</h6>
                     <h6>Team</h6>
@@ -26,27 +26,48 @@
             </div>
         </div>
     </div>
-<div id="players"></div>
-    <div class="container2">
-        <div class="row">
-            <form onsubmit="app.controllers.football-service.loadPlayersData(event)"></form>
-            console.log(playersData)
-                <div class="w3-card-4 player-card" id="player-card">
-                        <div class="my-team" id='myPlayer'>
-                            <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="">
-                            <h6>Player Name</h6>
-                            <h6>Team</h6>
-                            <h6>Position</h>
-                        </div>
-                    </div>
+    <div id="players"></div>
+    <div class="container">
+        <div class="row" display="inline-block" position= "fixed">
+            <form onsubmit="app.controllers.football-service.getPlayersByTeam(event)">
+                <div class="col-xs-2">
+                    <input type="text" class="form-control" id="newPlayer" placeholder="team Search">
                 </div>
-            </form>
-        </div>
-    </div>
-   <div class="form" onclick = "PlayerService.getPlayersByTeam">
+                <div class="col-xs-2">
+                    <button id="teamSearchButton" type="submit">Search by Team</button>
+                </div>
+                <form onsubmit="app.controllers.football-service.getPlayersByPosition(event)">
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control" placeholder="Position Search">
+                    </div>
+                    <div class="col-xs-2">
+                        <button id="positionSearchButton" type="submit">Search by Position</button>
+                    </div>
+                    <form onsubmit="app.controllers.football-service.getPlayersByName(event)">
+                        <div class="col-xs-2">
+                            <input type="text" class="form-control" placeholder="Name Search">
+                        </div>
+                        <div class="col-xs-2">
+                            <button id="nameSearchButton" type="submit">Search by Name</button>
+                        </div>
+                        <div class="row">
+                            <div class="row"></div>
+                            <div class="w3-card-4 player-card" id="player-card2">
+                                <div class="my-team" id='myPlayer'>
+                                    <img src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" alt="">
+                                    <h6>Player Name</h6>
+                                    <h6>Team</h6>
+                                    <h6>Position</h>
 
-</div>
-<div class="button"></div> -->
+                                </div>
+                            </div>
+                    </form>
+                    </div>
+        </div>
+        <div class="form" onclick="PlayerService.getPlayersByTeam">
+
+        </div>
+        <div class="button"></div> -->
     </div>
 
     <p>so far so good</p>

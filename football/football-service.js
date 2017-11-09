@@ -10,19 +10,18 @@ function PlayerService(callback) {
     var myTeam = []
     var getData = []
     var playerCards = []
-    // on instructions from controller, find and load data(3)
+
     function loadPlayersData() {
 
         var localData = localStorage.getItem('playersData');
         if (localData) {
-            playersData = JSON.parse(localData);
-           //console.log(playersData)
-
-            //return callback();
+            playersData = JSON.parse(localData)
+            console.log(playersData)
+            return (callback);
             //return will short-circuit the loadPlayersData function
             //this will prevent the code below from ever executing
         }
-        //gets data from API, writes it to lacal storage(5)
+
         var url = "https://bcw-getter.herokuapp.com/?url=";
         var endpointUri = "http://api.cbssports.com/fantasy/players/list?version=3.0&SPORT=football&response_format=json";
         var apiUrl = url + encodeURIComponent(endpointUri);
@@ -33,40 +32,46 @@ function PlayerService(callback) {
             console.log('Writing Player Data to localStorage')
             localStorage.setItem('playersData', JSON.stringify(playersData))
             console.log('Finished Writing Player Data to localStorage')
-            callback(playersData)
+            callback()
         });
+       //call the function above every time we create a new service
     }
+
+
 
     //all independent functions but need access to playersData
 
-    this.getPlayersByTeam = function (teamName) {
-        return playersData.filter(function (player) {
-            if (player.team == teamName) {
-                return true;
-            }
-        });
-    }
 
-    this.getPlayersByPosition = function (position) {
-        return playersData.filter(function (player) {
-            if (player.position == position) {
-                return true;
-            }
-        });
-    }
+    function PlayersService(callback){
+        var playersData = [];
+ 
 
-    this.getPlayersByName = function (name) {
-        return playersData.filter(function (player) {
-            if (player.name == name) {
-                return true;
-            }
-        });
-    }
-
-
-
-
-loadPlayersData(); //call the function above every time we create a new service }
-    
+this.getPlayersByTeam = function (teamName) {
+    playersData.filter(function (player) {
+        if (player.pro_team == teamName) {
+            return true;
+        }
+    });
 }
 
+this.getPlayersByPosition = function (position) {
+    return playersData.filter(function (player) {
+        if (player.position == position) {
+            return true;
+        }
+    });
+}
+
+this.getPlayersByName = function (name) {
+    return playersData.filter(function (player) {
+        if (player.name == name) {
+            return true;
+        }
+    });
+   
+}
+
+
+
+    }loadPlayersData();
+}
